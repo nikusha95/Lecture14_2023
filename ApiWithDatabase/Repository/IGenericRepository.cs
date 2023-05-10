@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 public interface IGenericRepository<T> where T : class
 {
     Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression = null,
-        Expression<Func<T, object>>[] includes = null);
+       params Expression<Func<T, object>>[] includes);
 
     Task<T> GetByIdAsync(int id);
     Task AddAsync(T obj);

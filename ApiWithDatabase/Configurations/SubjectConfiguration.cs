@@ -10,5 +10,9 @@ public class SubjectConfiguration : IEntityTypeConfiguration<Subject>
     {
         builder.ToTable("Subject");
         builder.Property(x => x.Name).HasMaxLength(255);
+        
+        builder.HasMany(x => x.StudentSubjects)
+            .WithOne(x => x.Subject)
+            .HasForeignKey(x => x.SubjectId);
     }
 }

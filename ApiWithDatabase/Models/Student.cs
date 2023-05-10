@@ -7,4 +7,5 @@ public class Student
     public string LastName { get; set; }
     public string PersonalId { get; set; }
     public int StartYear { get; set; }
+    public IList<StudentSubject> StudentSubjects { get; set; }
 }
